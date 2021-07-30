@@ -16,7 +16,7 @@ export interface examInterface{
 export async function examsController(req: Request, res: Response){
     try{
         const newExam: examInterface = req.body
-        const professorsList = await await getRepository(Professor).find().
+        const professorsList = await await getRepository(Professor).find()
         const coursesList = await getRepository(Course).find()
         console.log(professorsList)
         if(examSchema.validate(newExam).error){
