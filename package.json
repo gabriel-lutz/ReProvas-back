@@ -7,7 +7,7 @@
     "test": "npx jest -i",
     "build": "npx tsc --outDir dist",
     "start": "node dist/src/server.js",
-    "postinstall": "npm run build",
+    "typeorm": "ts-node ./node_modules/typeorm/cli",
     "dev": "npx nodemon --watch \"src/**\" --ext \"ts,json\" --exec \"ts-node src/server.ts\""
   },
   "keywords": [],
@@ -29,7 +29,11 @@
   },
   "dependencies": {
     "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
     "express": "^4.17.1",
-    "pg": "^8.6.0"
+    "joi": "^17.4.1",
+    "pg": "^8.6.0",
+    "reflect-metadata": "^0.1.13",
+    "typeorm": "^0.2.34"
   }
 }
