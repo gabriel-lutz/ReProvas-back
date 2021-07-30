@@ -8,7 +8,6 @@
     "build": "NODE_ENV=production npx tsc --outDir dist",
     "start": "NODE_ENV=production NODE_TLS_REJECT_UNAUTHORIZED=0 node dist/server.js",
     "typeorm": "ts-node ./node_modules/typeorm/cli",
-    "elavamosnois": "node --require ts-node/register ./node_modules/typeorm/cli.js",
     "dev": "NODE_ENV=development npx nodemon --watch \"src/**\" --ext \"ts,json\" --exec \"ts-node src/server.ts\""
   },
   "keywords": [],
