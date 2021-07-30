@@ -2,7 +2,7 @@
 import { getConnectionManager } from "typeorm";
 
 if (process.env.NODE_ENV === 'production' && process.env.DATABASE_URL.indexOf("sslmode=require") === -1) {
-  process.env.DATABASE_URL += "?ssl=true&sslfactory=org.postgresql.ssl.NonValidatingFactoryn";
+  process.env.DATABASE_URL += "?ssl=true&sslfactory=org.postgresql.ssl.NonValidatingFactory";
 }
 
 export default async function connect () {
