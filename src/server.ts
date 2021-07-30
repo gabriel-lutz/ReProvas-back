@@ -1,4 +1,4 @@
-import "./setup.ts";
+import "./setup";
 import app, { init } from "./app";
 init().then(()=>{
   app.listen(4000, () => {
