@@ -4,7 +4,7 @@ require('dotenv').config();
 
 module.exports = {
   type: "postgres",
-  url: process.env.DB_URL,
+  url: process.env.DATABASE_URL,
   migrationsTableName: "migrations",
   entities: ["dist/entities/*.js"],
   migrations: ["dist/migrations/*.js"],

@@ -14,8 +14,8 @@ app.use(express.json());
 
 app.get("/test", async (req, res) => {
   try{
-    
     console.log("funcionou")
+    res.send(200)
   }catch(err){
     console.log(err)
     res.sendStatus(500)
