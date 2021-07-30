@@ -14,10 +14,8 @@ app.use(express.json());
 
 app.get("/test", async (req, res) => {
   try{
-    const exams = await getRepository(Professor).find({
-      relations: ["courses"]
-    });
-  res.send(exams);
+    
+    console.log("funcionou")
   }catch(err){
     console.log(err)
     res.sendStatus(500)
