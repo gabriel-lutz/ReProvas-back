@@ -1,4 +1,5 @@
 require('dotenv').config();
+require("./src/setup")
 
 module.exports = {
   type: "postgres",
@@ -6,11 +7,12 @@ module.exports = {
   migrationsTableName: "migrations",
   entities: ["dist/entities/*.js"],
   migrations: ["dist/migrations/*.js"],
+  migrationsRun:true,
   cli: {
     migrationsDir: "src/migrations",
     entitiesDir: "dist/entities/*.js"
   },
-    extra: {
+  extra: {
     ssl: {
       rejectUnauthorized: false,
     }

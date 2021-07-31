@@ -7,8 +7,6 @@ import Professor from "../entities/Professor"
 
 export async function registerService(newExam: examInterface){
     try{
-    
-    console.log(newExam)
     const category = await getRepository(Category).findOne({id: newExam.categoryId})
     const course = await getRepository(Course).findOne({id: newExam.courseId})
     const professor = await getRepository(Professor).findOne({id: newExam.professorId})
@@ -17,10 +15,8 @@ export async function registerService(newExam: examInterface){
     exam.course = course
     exam.professor = professor
 
-    console.log(exam)
     const result = await getRepository(Exam).save(exam)
 
-    console.log(result)
     return result
     }catch(err){
         console.log(err)
