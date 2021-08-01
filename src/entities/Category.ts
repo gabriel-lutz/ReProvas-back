@@ -8,4 +8,7 @@ export default class Category{
 
     @Column()
     name: string
+
+    @OneToMany(()=>Exam, exam=>exam.category)
+    exams: Exam[]
 }
