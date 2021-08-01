@@ -2,14 +2,20 @@ import express from "express";
 import cors from "cors";
 import "reflect-metadata";
 import connectDatabase from "./database";
-import { createQueryBuilder, getRepository } from "typeorm";
-import {categoriesController, coursesController, examsController, examsListByCategoriesController, examsListByProfessor} from "./controllers/examsController"
-import Professor from "./entities/Professor";
+import {categoriesController, 
+        coursesController, 
+        examsController, 
+        examsListByCategoriesController, 
+        examsListByCourseController, 
+        examsListByPeriodsController, 
+        examsListByProfessor} from "./controllers/examsController"
 
 const app = express();
 app.use(cors());
 app.use(express.json());
 
+app.get("/exams/periods", examsListByPeriodsController)
+app.get("/exams/courses/:id", examsListByCourseController)
 app.get("/exams/professors", examsListByProfessor)
 app.get("/exams/professors/:id", examsListByCategoriesController)
 app.get("/courses", coursesController);

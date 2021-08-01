@@ -1,14 +1,14 @@
 import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from "typeorm";
-import Exam from "./Exam";
+import Course from "./Course";
 
-@Entity('categories')
-export default class Category{
+@Entity('period')
+export default class Period{
     @PrimaryGeneratedColumn()
     id: number
 
     @Column()
     name: string
 
-    @OneToMany(()=>Exam, exam=>exam.category)
-    exams: Exam[]
+    @OneToMany(()=>Course, course=> course.period)
+    courses: Course[]
 }
